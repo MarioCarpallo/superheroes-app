@@ -1,0 +1,19 @@
+<div class="container">
+    <div class="row">
+        <div class="col-md-4" *ngFor="let event of (obs | async)" (click)="editHeroe(event)">
+            <div class="heroe-card"> 
+                <img [src]="event.image" class="img-fluid">
+                <div class="heroe-name">
+                    {{event.name}}
+                </div>
+                <div class="secondary-info">
+                    SuperPoder: {{event.superPower}}
+                </div>
+                <div class="terciary-info">
+                    Edad: {{event.birthDate | age}}
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+

@@ -1,0 +1,56 @@
+<div mat-dialog-title>
+    <div class="row mb-3" id="dialog-title">
+      <div class="col d-flex align-items-center">
+        <h1>{{!editModeData ? 'Añadir Super Héroe': 'Editar a '+editModeData.name}}</h1>
+      </div>
+    </div>
+  </div>
+  <hr>
+  <div mat-dialog-content class="dialog__min___height">
+    <form [formGroup]="form">
+      <div class="row">
+        <!--Name (input)-->
+        <div class="col-md-4">
+          <mat-form-field class="w-100" appearance="outline">
+            <mat-label>Nombre</mat-label>
+            <input matInput type="text" formControlName="name">
+            <mat-error *ngIf="form.get('name')!.hasError('required')">
+              * El nombre del SuperHéroe es <strong>obligatorio</strong>
+            </mat-error>
+          </mat-form-field>
+        </div>
+
+        <!-- SuperPower  -->
+        <div class="col-md-4">
+          <mat-form-field class="w-100" appearance="outline">
+            <mat-label>SuperPoder</mat-label>
+            <input matInput type="text" formControlName="superPower">
+            <mat-error *ngIf="form.get('superPower')!.hasError('required')">
+              * El superPoder es <strong>obligatorio</strong>
+            </mat-error>
+          </mat-form-field>
+        </div>
+
+        <!--  -->
+        <div class="col-md-4">
+          <mat-form-field class="w-100" appearance="outline">
+            <mat-label>Fecha de inicio desde</mat-label>
+            <input formControlName="birthDate" matInput [matDatepicker]="birthDate" placeholder="Escoge una fecha de Nacimiento" >
+            <mat-datepicker-toggle matSuffix [for]="birthDate"></mat-datepicker-toggle>
+            <mat-datepicker #birthDate></mat-datepicker>
+            <mat-error>Selecciona una fecha de nacimiento válida</mat-error>
+        </mat-form-field>
+      </div>
+    </div>
+    </form>
+  </div>
+  <mat-divider></mat-divider>
+  <div class="row mb-1">
+    <div mat-dialog-actions class="col d-flex flex-row" *ngIf="editModeData">
+      <button (click)="deleteHeroe()" mat-raised-button class="mr-4" color="raised-dialogD">Eliminar Héroe</button>
+    </div>
+    <div mat-dialog-actions class="col d-flex flex-row-reverse">
+      <button (click)="close(form.value)" mat-raised-button color="primary" [disabled]="form.invalid">{{(this.data.isEditMode)? 'Guardar': 'Añadir'}}</button>
+      <button (click)="close(false)" mat-raised-button class="mr-4" color="raised-dialog">Cancelar</button>
+    </div>
+  </div>
