@@ -40,16 +40,16 @@ Posibles Mejoras
 
 
 Componentes/Servicios/Modelos a Crear: 
-    - main-home-component ✓
-    - heroe-card-component ✓
-    - search-component ✓
-    - heroe-service ✓ 
-    - heroe-model ✓
-    - heroe-service-mock ✓
+ - main-home-component ✓
+ - heroe-card-component ✓
+ - search-component ✓
+ - heroe-service ✓ 
+ - heroe-model ✓
+ - heroe-service-mock ✓
 
 Realizar Test Unitarios de: 
-    - main-home-component ✓
-    - heroe-card-component ✓
-    - search-component ✓
-    - heroe-service ✓ *En el coverage no se refleja, pero por consola si que pasa los test.
-    - heroe-model ✓
+- main-home-component ✓
+ - heroe-card-component ✓
+ - search-component ✓
+ - heroe-service ✓ *En el coverage no se refleja, pero por consola si que pasa los test.
+ - heroe-model ✓
